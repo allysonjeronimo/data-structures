@@ -2,8 +2,14 @@ const LinkedList = require('./LinkedList')
 
 const linkedList = new LinkedList()
 
-linkedList.prepend(3)
-linkedList.prepend(5)
-linkedList.prepend(2)
+linkedList.printStructure = false
 
-console.log('Result: ', linkedList.toString())
+linkedList.
+    append(1).
+    append(2).
+    append(3).
+    prepend(0).
+    prepend(-1).
+    prepend(-2)
+
+console.log('Result:', linkedList.toString())
