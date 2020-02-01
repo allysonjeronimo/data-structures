@@ -8,7 +8,11 @@ export default class LinkedList{
     }
 
     prepend(value){
+        const newNode = new Node(value, this.head)
+        this.head = newNode
 
+        if(!this.tail)
+            this.tail = newNode
     }
 
     append(value){
@@ -24,6 +28,12 @@ export default class LinkedList{
     }
 
     toString(){
-
+        let current = this.head
+        let result = ``
+        while(current){
+            result.concat(`${current.toString}`)
+            current = current.next
+        }
+        return result
     }
 }
