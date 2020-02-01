@@ -1,6 +1,6 @@
-import Node from './Node'
+const Node = require('./Node')
 
-export default class LinkedList{
+module.exports = class LinkedList{
 
     constructor(){
         this.head = null
@@ -29,9 +29,9 @@ export default class LinkedList{
 
     toString(){
         let current = this.head
-        let result = ``
-        while(current){
-            result.concat(`${current.toString}`)
+        let result = ''
+        while(current !== null){
+            result += `[${current.toString()}]`
             current = current.next
         }
         return result
