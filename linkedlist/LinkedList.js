@@ -2,8 +2,6 @@ const Node = require('./Node')
 
 module.exports = class LinkedList{
 
-    printStructure = false
-
     constructor(){
         this.head = null
         this.tail = null
@@ -46,7 +44,7 @@ module.exports = class LinkedList{
                 }
             }
             else{
-                const current = this.head
+                let current = this.head
                 while(current.next){
                     if(current.next.value === value){
 
@@ -68,17 +66,32 @@ module.exports = class LinkedList{
         }
     }
 
+    find(value){
+        if(!this.head)
+            return
+        
+        let current = this.head
+
+        while(current){
+            if(current.value === value)
+                return current
+            current = current.next
+        }
+
+        return null
+    }
+
     reverser(){
         
     }
 
-    toString(){
+    toString(printStructure = false){
         let current = this.head
         let result = ''
         while(current !== null){
             
             // print head
-            if(current == this.head && this.printStructure){
+            if(current == this.head && printStructure){
                 result += 'H-->'
             }
 
@@ -86,12 +99,12 @@ module.exports = class LinkedList{
 
             // print next arrow?
 
-            if(this.printStructure && current.next){
+            if(printStructure && current.next){
                 result += '-->'
             }
             
             // print tail
-            if(current == this.tail && this.printStructure){
+            if(current == this.tail && printStructure){
                 result += '<--T'
             }
 
