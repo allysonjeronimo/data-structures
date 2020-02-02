@@ -81,8 +81,28 @@ module.exports = class LinkedList{
         return null
     }
 
-    reverser(){
+    reverse(){
         
+        if(!this.head || this.head == this.tail)
+            return
+
+        let previous = null    
+        let current = this.head
+        let next = current.next
+
+        while(current){
+
+            current.next = previous
+
+            previous = current
+            current = next
+
+            if(next)
+                next = next.next
+        }
+
+        this.tail = this.head
+        this.head = previous
     }
 
     toString(printStructure = false){
