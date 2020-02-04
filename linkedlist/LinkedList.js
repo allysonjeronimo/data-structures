@@ -1,6 +1,6 @@
 const Node = require('./Node')
 
-module.exports = class LinkedList{
+class LinkedList{
 
     constructor(){
         this.head = null
@@ -135,3 +135,5 @@ module.exports = class LinkedList{
         return result
     }
 }
+
+module.exports = LinkedList

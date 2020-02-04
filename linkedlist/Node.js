@@ -1,4 +1,4 @@
-module.exports = class Node{
+class Node{
     constructor(value, next = null){
         this.value = value
         this.next = next
@@ -8,3 +8,5 @@ module.exports = class Node{
         return `${this.value}`
     }
 }
+
+module.exports = Node
