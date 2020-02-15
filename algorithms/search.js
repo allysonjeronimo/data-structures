@@ -1,3 +1,4 @@
+
 function linearSearch(array, value) {
     for (let i = 0; i < array.length; i++) {
         if (array[i] === value)
@@ -26,19 +27,9 @@ function binarySearch(array, value){
     return null
 }
 
-function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-}
+const utils = require('./utils')()
 
-function getFilledArray(length, sorted) {
-    const array = []
-    for (let i = 0; i < length; i++) {
-         array.push(sorted ? i : getRandomArbitrary(0, length-1))
-    }
-    return array
-}
+const array = utils.getFilledArray(100000000, true)
 
-
-const array = getFilledArray(100000000, true)
 const value = 99999999
 console.log(`Index of ${value}:`, binarySearch(array, value))
